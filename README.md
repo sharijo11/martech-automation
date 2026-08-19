@@ -4,6 +4,12 @@ A cloud-hosted marketing automation system that captures, scores and prioritises
 
 The project demonstrates how marketing technology, data and automation can be connected to improve lead management and create a reliable handoff between marketing and sales.
 
+## Live Demo
+
+🌐 **Live application:** https://martech-automation.onrender.com/
+
+Submit a test lead to see the end-to-end workflow in action, including lead scoring, CRM activation and automated sales notification.
+
 ## Overview
 
 Marketing teams often capture leads across multiple channels, but turning those leads into timely and actionable sales opportunities requires several systems to work together.
