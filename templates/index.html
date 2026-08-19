@@ -1,0 +1,132 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Live demo of a cloud-hosted MarTech lead scoring and automation workflow.">
+  <title>MarTech Automation | Request a demo</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+<header class="site-header">
+  <a class="brand" href="/"><span class="brand-mark">M</span><span>MarTech Automation</span></a>
+  <a class="github-link" href="https://github.com/sharijo11/martech-automation" target="_blank" rel="noopener">View project on GitHub</a>
+</header>
+
+<main>
+<section class="hero">
+  <div class="hero-copy">
+    <p class="eyebrow">LIVE MARTECH DEMO</p>
+    <h1>Turn an inbound enquiry into an actionable sales lead.</h1>
+    <p class="lede">Submit the form to see an end-to-end marketing automation workflow in action: lead capture, scoring, cloud storage, CRM sync and sales notification.</p>
+
+    <div class="journey">
+      <div><span>01</span><strong>Capture</strong><small>Website form</small></div><i>→</i>
+      <div><span>02</span><strong>Score</strong><small>Hot / warm / cold</small></div><i>→</i>
+      <div><span>03</span><strong>Automate</strong><small>Rules & tasks</small></div><i>→</i>
+      <div><span>04</span><strong>Activate</strong><small>HubSpot + email</small></div>
+    </div>
+
+    <div class="proof">
+      <div><strong>Python + Flask</strong><span>REST API</span></div>
+      <div><strong>TiDB Cloud</strong><span>Persistent data</span></div>
+      <div><strong>HubSpot</strong><span>CRM activation</span></div>
+      <div><strong>Resend</strong><span>Sales alerts</span></div>
+    </div>
+  </div>
+
+  <section class="form-card">
+    <div class="form-intro">
+      <p class="eyebrow">REQUEST A DEMO</p>
+      <h2>See the workflow run</h2>
+      <p>Use a test email address. This portfolio demo creates CRM and automation activity.</p>
+    </div>
+
+    <form id="lead-form">
+      <div class="field-grid two">
+        <label><span>First name</span><input name="first_name" required placeholder="Avery"></label>
+        <label><span>Last name</span><input name="last_name" required placeholder="Cole"></label>
+      </div>
+
+      <label><span>Work email</span><input name="email" type="email" required placeholder="avery@example.com"></label>
+      <label><span>Company</span><input name="company" placeholder="Vertex Digital"></label>
+
+      <div class="field-grid two">
+        <label><span>Job title</span>
+          <select name="job_title" required>
+            <option value="">Select role</option>
+            <option>Marketing Coordinator</option>
+            <option>Marketing Manager</option>
+            <option>Head of Marketing</option>
+            <option>Marketing Director</option>
+            <option>VP Marketing</option>
+            <option>Chief Marketing Officer</option>
+          </select>
+        </label>
+
+        <label><span>Company size</span>
+          <select name="company_size" required>
+            <option value="">Select size</option>
+            <option value="25">1–50</option>
+            <option value="125">51–200</option>
+            <option value="350">201–500</option>
+            <option value="750">501–1,000</option>
+            <option value="1500">1,001–2,000</option>
+            <option value="3000">2,000+</option>
+          </select>
+        </label>
+      </div>
+
+      <label><span>What are you interested in?</span>
+        <select name="intent" required>
+          <option value="">Select intent</option>
+          <option value="general">General information</option>
+          <option value="demo">Product demo</option>
+          <option value="pricing">Pricing</option>
+          <option value="purchase">Ready to purchase</option>
+        </select>
+      </label>
+
+      <button id="submit-button" type="submit"><span>Run automation</span><span>→</span></button>
+      <p class="privacy-note">Portfolio demonstration only. Do not submit real customer or sensitive data.</p>
+    </form>
+
+    <section id="result" class="result" hidden>
+      <div id="result-icon" class="result-icon">✓</div>
+      <p class="eyebrow">AUTOMATION COMPLETE</p>
+      <h3 id="result-title">Lead captured</h3>
+      <p id="result-copy"></p>
+
+      <div class="score-panel">
+        <div><span>Lead score</span><strong id="result-score">—</strong></div>
+        <div><span>Category</span><strong id="result-category">—</strong></div>
+      </div>
+
+      <div class="result-actions">
+        <span id="crm-status">CRM task created</span>
+        <span id="email-status">Email task created</span>
+      </div>
+
+      <button id="reset-button" class="secondary-button" type="button">Submit another lead</button>
+    </section>
+  </section>
+</section>
+
+<section class="how-it-works">
+  <p class="eyebrow">WHAT HAPPENS BEHIND THE FORM</p>
+  <h2>A marketing journey backed by real integrations.</h2>
+  <div class="feature-grid">
+    <article><span class="feature-number">01</span><h3>Lead scoring</h3><p>Profile and intent signals are evaluated to produce a lead score and hot, warm or cold classification.</p></article>
+    <article><span class="feature-number">02</span><h3>CRM orchestration</h3><p>The automation engine creates tasks and creates or updates the contact in HubSpot without duplicate records.</p></article>
+    <article><span class="feature-number">03</span><h3>Sales activation</h3><p>High-priority leads trigger a sales notification through Resend, while provider outcomes are written to audit logs.</p></article>
+  </div>
+</section>
+</main>
+
+<footer><span>MarTech Automation & Lead Management System</span><span>Portfolio project · Python · APIs · Cloud · CRM</span></footer>
+<script src="{{ url_for('static', filename='app.js') }}"></script>
+</body>
+</html>

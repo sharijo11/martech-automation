@@ -7,7 +7,7 @@ import os
 
 import requests
 from dotenv import load_dotenv
-from flask import Flask, jsonify, request
+from flask import Flask, jsonify, request, render_template
 from flask_sqlalchemy import SQLAlchemy
 from sqlalchemy.exc import IntegrityError, SQLAlchemyError
 
@@ -623,6 +623,9 @@ def create_lead_record(data):
         app.logger.exception("Database error while creating lead")
         return None, None, "Database error", 500
 
+@app.route("/", methods=["GET"])
+def index():
+    return render_template("index.html")
 
 @app.route("/health", methods=["GET"])
 def health():
