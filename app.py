@@ -32,6 +32,15 @@ HTTP_TIMEOUT = float(os.getenv("HTTP_TIMEOUT", "10"))
 app.config["SQLALCHEMY_DATABASE_URI"] = (
     f"mysql+pymysql://{DB_USER}:{DB_PASSWORD}@{DB_HOST}:{DB_PORT}/{DB_NAME}"
 )
+
+app.config["SQLALCHEMY_ENGINE_OPTIONS"] = {
+    "connect_args": {
+        "ssl": {
+            "ca": os.getenv("DB_SSL_CA", "/etc/ssl/cert.pem")
+        }
+    }
+}
+
 app.config["SQLALCHEMY_TRACK_MODIFICATIONS"] = False
 
 db = SQLAlchemy(app)
