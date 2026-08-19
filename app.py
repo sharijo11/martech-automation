@@ -1,4 +1,5 @@
 from datetime import datetime, timedelta
+import certifi
 import hashlib
 import hmac
 import json
@@ -36,7 +37,7 @@ app.config["SQLALCHEMY_DATABASE_URI"] = (
 app.config["SQLALCHEMY_ENGINE_OPTIONS"] = {
     "connect_args": {
         "ssl": {
-            "ca": os.getenv("DB_SSL_CA", "/etc/ssl/cert.pem")
+            "ca": certifi.where()
         }
     }
 }
