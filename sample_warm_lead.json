@@ -1,0 +1,10 @@
+{
+  "first_name": "Maya",
+  "last_name": "Patel",
+  "email": "maya.patel@example.com",
+  "company": "Growth Labs",
+  "job_title": "Marketing Manager",
+  "company_size": 100,
+  "source": "webinar",
+  "intent": "research"
+}

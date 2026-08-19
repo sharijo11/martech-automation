@@ -1,0 +1,10 @@
+{
+  "first_name": "Amara",
+  "last_name": "Jones",
+  "email": "amara@example.com",
+  "company": "Example FinTech",
+  "job_title": "Head of Growth",
+  "company_size": 600,
+  "source": "demo_request",
+  "intent": "pricing"
+}

@@ -1,0 +1,27 @@
+name: martech_automation_phase3_1
+
+services:
+  db:
+    image: mysql:8.4
+    container_name: martech-phase3-db
+    restart: unless-stopped
+    environment:
+      MYSQL_ROOT_PASSWORD: root_password
+      MYSQL_DATABASE: martech_automation
+      MYSQL_USER: martech_user
+      MYSQL_PASSWORD: martech_password
+    ports:
+      - "3307:3306"
+    volumes:
+      # Reuse the data volume created in Phase 1 so your existing leads,
+      # tasks, events and provider logs are preserved.
+      - martech_mysql_data:/var/lib/mysql
+    healthcheck:
+      test: ["CMD", "mysqladmin", "ping", "-h", "localhost", "-u", "root", "-proot_password"]
+      interval: 5s
+      timeout: 5s
+      retries: 20
+
+volumes:
+  martech_mysql_data:
+    name: martech_automation_phase1_martech_mysql_data
